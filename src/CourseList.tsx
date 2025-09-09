@@ -1,17 +1,11 @@
 import React from "react";
-import Course from "./Course";
+import Course, { CourseProps } from "./Course";
 
-export interface CourseType {
-  name: string;
-  courseId: string;
-  studentPositions: number;
+interface CourseListProps {
+  courses: CourseProps[];
 }
 
-interface AppProps {
-  courses: CourseType[];
-}
-
-const App: React.FC<AppProps> = ({ courses }) => {
+const CourseList: React.FC<CourseListProps> = ({ courses }) => {
   return (
     <div>
       {courses.map((course) => (
@@ -26,5 +20,5 @@ const App: React.FC<AppProps> = ({ courses }) => {
   );
 };
 
-export default App;
+export default CourseList;
 
